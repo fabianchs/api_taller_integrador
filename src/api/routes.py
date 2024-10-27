@@ -39,7 +39,7 @@ def new_measure():
 
     request_body=request.get_json()
     
-    new_measure = Measure(position=request_body["position"], date=request_body["date"], temperature=request_body["temperature"], hour=request_body["hour"])
+    new_measure = Measure(position=request_body["position"], device=request_body["device"], date=request_body["date"], distance=request_body["distance"], hour=request_body["hour"])
 
     db.session.add(new_measure)
     db.session.commit()

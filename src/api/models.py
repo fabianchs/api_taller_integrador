@@ -24,8 +24,9 @@ class Measure(db.Model):
     # Notice that each column is also a normal Python instance attribute.
     id = db.Column(db.Integer, primary_key=True)
     position = db.Column(db.String(240), unique=False, nullable=True)
+    device= db.Column(db.String(120), unique=False, nullable=True)
     date = db.Column(db.String(120), unique=False, nullable=True)
-    temperature = db.Column(db.String(120),unique=False, nullable=True)
+    distance = db.Column(db.String(120),unique=False, nullable=True)
     hour = db.Column(db.String(120),unique=False, nullable=True)
 
 
@@ -36,7 +37,8 @@ class Measure(db.Model):
         return {
             "id": self.id,
             "position": self.position,
+            "device": self.device,
             "date": self.date,
-            "temperature": self.temperature,
+            "distance": self.distance,
             "hour": self.hour
         }
